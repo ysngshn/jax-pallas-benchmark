@@ -1,6 +1,6 @@
 # Pallas Implementation Benchmark
 
-This repository explores the [Pallas](https://docs.jax.dev/en/latest/pallas/index.html) extension from [JAX](https://github.com/jax-ml/jax) by benchmarking several implementations of a custom RNN architecture called [IndRNN](https://arxiv.org/abs/1803.04831). (Feel free to also check out my [PyTorch-CUDA version](https://github.com/ysngshn/torch-indrnn)!)
+This repository explores the [Pallas](https://docs.jax.dev/en/latest/pallas/index.html) extension from [JAX](https://github.com/jax-ml/jax) by benchmarking several implementations of a custom RNN architecture called [IndRNN](https://arxiv.org/abs/1803.04831). (Feel free to also check out my [PyTorch-CUDA version](https://github.com/ysngshn/torch-indrnn) :) )
 
 ## What is Pallas?
 
@@ -27,15 +27,6 @@ To verify this, I have implemented three different versions of IndRNN in JAX. Th
 - [indrnn_pallas](./run_benchmark.py#L120) is the Pallas-based synchronization-free version. The computation on each core is implemented by the [_indrnn_elementwise_kernel](./run_benchmark.py#L23) Pallas kernel function.
 
 Running them 10000 times on a random input with 1000 times steps and 1000 features yields the following run times on my machine:
-
-naive	 
-scan	 
-pallas	 
-b 4	 
-jitted	 
-scjit	 
-paljit	 
-4jit	 0.4490365516394377
 
 | version | run time (s)       |
 |---------|--------------------|
@@ -83,10 +74,10 @@ And after jit-compile, we have:
 
 We see that the new configuration achieves better performance on my computer, especially in the compiled case.
 
-This observation, as well as optimal configurations, will most likely depend on the specific hardware being used. I am no hardware expert, and I would appreciate it if you have any guides or heuristics on how to choose the grid/block size ;)
+This observation, as well as optimal configurations, will most likely depend on the specific hardware being used. Would an optimal configuration completely bridge the gap between the jitted naive version and the Pallas one? I have no idea. I am also not a hardware expert, and I would appreciate it if you have any guides or heuristics on how to choose the grid/block size ;) 
 
 ## References:
-- 
+
 - [Official JAX Pallas doc](https://docs.jax.dev/en/latest/pallas/index.html)
 - [Triton project](https://github.com/triton-lang/triton)
 - [IndRNN model](https://arxiv.org/abs/1803.04831) and [its official PyTorch implementation](https://github.com/Sunnydreamrain/IndRNN_pytorch).
