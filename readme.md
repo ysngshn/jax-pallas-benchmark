@@ -80,4 +80,5 @@ This observation, as well as optimal configurations, will most likely depend on 
 
 - [Official JAX Pallas doc](https://docs.jax.dev/en/latest/pallas/index.html)
 - [Triton project](https://github.com/triton-lang/triton)
-- [IndRNN model](https://arxiv.org/abs/1803.04831) and [its official PyTorch implementation](https://github.com/Sunnydreamrain/IndRNN_pytorch).
+- [IndRNN model](https://arxiv.org/abs/1803.04831) and [its official PyTorch implementation](https://github.com/Sunnydreamrain/IndRNN_pytorch)
+- [My blog post about this benchmark](https://ysngshn.github.io/programming/pallas-benchmark/)
